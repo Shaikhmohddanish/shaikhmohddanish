@@ -1,5 +1,6 @@
-import { BookOpen, Briefcase, Award, Hammer } from 'lucide-react'
+import { BookOpen, Briefcase, Award, Hammer, Download } from 'lucide-react'
 import { resumeData } from '@/lib/portfolio-data'
+import { Button } from '@/components/ui/button'
 
 interface ResumeSectionProps {
   data?: typeof resumeData
@@ -9,7 +10,15 @@ export function ResumeSection({ data = resumeData }: ResumeSectionProps) {
   return (
     <div className="space-y-8 md:space-y-10">
       <div>
-        <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4">Resume</h2>
+        <div className="flex items-center justify-between mb-4">
+          <h2 className="text-2xl md:text-3xl font-bold text-foreground">Resume</h2>
+          <Button asChild variant="default" size="sm">
+            <a href="/Mohd DanishShaikh.pdf" download="Mohd_DanishShaikh_Resume.pdf">
+              <Download className="w-4 h-4 mr-2" />
+              Download Resume
+            </a>
+          </Button>
+        </div>
         <div className="w-10 h-1 bg-accent rounded-full mb-6" />
       </div>
 
